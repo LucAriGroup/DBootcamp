@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs | Discipline Bootcamp SA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B0000;
+            --primary-dark: #660000;
+            --secondary: #1a1a1a;
+            --accent: #D4AF37;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e6c12d;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Behavioral Issues Section */
+        .behavioral-issues {
+            background-color: var(--light);
+        }
+        
+        .issues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .issue-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .issue-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .issue-icon {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .issue-content {
+            padding: 20px;
+        }
+        
+        .issue-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Skills Development Section */
+        .skills-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .skill-tab {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .skill-tab.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .skill-tab:hover:not(.active) {
+            color: var(--primary);
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+        
+        .skill-content {
+            display: none;
+        }
+        
+        .skill-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .skill-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .skill-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .skill-info ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .skill-info ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .skill-info ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--success);
+            position: absolute;
+            left: 0;
+        }
+        
+        .certificate {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .certificate h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .skill-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .skill-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Severe Cases Section */
+        .severe-cases {
+            background-color: var(--light);
+        }
+        
+        .case-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            bottom: -40px;
+            width: 2px;
+            background-color: #ddd;
+        }
+        
+        .timeline-period {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-right: 20px;
+            flex-shrink: 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .timeline-content {
+            padding-top: 10px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            flex: 1;
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Staff Section */
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .staff-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .staff-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .staff-image {
+            height: 200px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .staff-info {
+            padding: 20px;
+        }
+        
+        .staff-info h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .staff-info .title {
+            color: var(--gray);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .skill-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .skill-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .skills-tabs {
+                flex-direction: column;
+            }
+            
+            .skill-tab {
+                border-bottom: 1px solid #ddd;
+                border-left: 3px solid transparent;
+            }
+            
+            .skill-tab.active {
+                border-left: 3px solid var(--primary);
+                border-bottom: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-campground"></i>
+                <h1>Discipline Bootcamp SA</h1>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="programs.html" class="active">Programs</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#location">Location</a></li>
+                    <li><a href="index.html#requirements">Requirements</a></li>
+                    <li><a href="index.html#registration">Registration</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Our Comprehensive Programs</h2>
+            <p>Transforming troubled youth through targeted behavioral interventions and practical skills development</p>
+            <a href="index.html#registration" class="btn">Enroll Now</a>
+        </div>
+    </section>
+
+    <!-- Behavioral Issues Section -->
+    <section id="behavioral" class="behavioral-issues">
+        <div class="container">
+            <div class="section-title">
+                <h2>Behavioral Issues We Address</h2>
+                <p>Our program is designed to target specific behavioral challenges with proven intervention strategies</p>
+            </div>
+            <div class="issues-grid">
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="issue-content">
+                        <h3>Laziness & Lack of Motivation</h3>
+                        <p>Structured routines, physical activities, and goal-setting exercises help participants develop discipline and find purpose.</p>
+                    </div>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-comment-slash"></i>
+                    </div>
+                    <div class="issue-content">
+                        <h3>Bad Attitude & Disrespect</h3>
+                        <p>Communication skills training, respect workshops, and emotional intelligence development.</p>
+                    </div>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <div class="issue-content">
+                        <h3>Drug & Alcohol Abuse</h3>
+                        <p>Specialized substance abuse program with counseling, support groups, and healthy habit formation.</p>
+                    </div>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-user-times"></i>
+                    </div>
+                    <div class="issue-content">
+                        <h3>Back Chatting & Defiance</h3>
+                        <p>Authority respect training, conflict resolution skills, and consequence understanding.</p>
+                    </div>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-low-vision"></i>
+                    </div>
+                    <div class="issue-content">
+                        <h3>Low Self-Confidence</h3>
+                        <p>Confidence-building activities, achievement recognition, and positive reinforcement techniques.</p>
+                    </div>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="issue-content">
+                        <h3>Peer Pressure Challenges</h3>
+                        <p>Assertiveness training, values clarification, and resistance skills development.</p>
+                    </div>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-icon">
+                        <i class="fas fa-chess-king"></i>
+                    </div>
+                    <div class="issue-content">
+                        <h3>Leadership Skills Development</h3>
+                        <p>Team-building exercises, responsibility assignments, and leadership opportunity creation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Development Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills Development Programs</h2>
+                <p>Practical skills training that provides participants with marketable abilities for their future</p>
+            </div>
+            
+            <div class="skills-tabs">
+                <button class="skill-tab active" data-tab="welding">Basic Welding</button>
+                <button class="skill-tab" data-tab="photoshop">Photo Editing</button>
+                <button class="skill-tab" data-tab="baking">Cake Baking</button>
+            </div>
+            
+            <div class="skill-content active" id="welding-content">
+                <div class="skill-details">
+                    <div class="skill-info">
+                        <h3>Basic Welding Certification Program</h3>
+                        <p>Our comprehensive welding program provides hands-on training in fundamental welding techniques that can lead to employment opportunities in various industries.</p>
+                        
+                        <h4>Course Curriculum:</h4>
+                        <ul>
+                            <li>Safety procedures and protective equipment usage</li>
+                            <li>Introduction to welding tools and equipment</li>
+                            <li>Arc welding (SMAW) fundamentals</li>
+                            <li>MIG welding (GMAW) techniques</li>
+                            <li>Reading and interpreting basic blueprints</li>
+                            <li>Metal preparation and joint types</li>
+                            <li>Weld inspection and quality control</li>
+                            <li>Basic metal fabrication projects</li>
+                        </ul>
+                        
+                        <div class="certificate">
+                            <h4>Certificate of Completion</h4>
+                            <p>Upon successful completion, participants receive a recognized Basic Welding Certificate that demonstrates competency in fundamental welding techniques.</p>
+                        </div>
+                        
+                        <a href="index.html#registration" class="btn btn-primary">Enroll in Welding Program</a>
+                    </div>
+                    <div class="skill-image">
+                        <img src="https://images.unsplash.com/photo-1580375600115-44f1d18d87d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Welding Training">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-content" id="photoshop-content">
+                <div class="skill-details">
+                    <div class="skill-info">
+                        <h3>Photo Editing (Photoshop) Certification</h3>
+                        <p>This program teaches digital image manipulation skills using Adobe Photoshop, preparing participants for opportunities in graphic design, photography, and digital marketing.</p>
+                        
+                        <h4>Course Curriculum:</h4>
+                        <ul>
+                            <li>Photoshop interface and workspace customization</li>
+                            <li>Basic photo corrections and enhancements</li>
+                            <li>Working with layers, masks, and adjustment layers</li>
+                            <li>Selection techniques and precision editing</li>
+                            <li>Color correction and grading</li>
+                            <li>Retouching and restoration techniques</li>
+                            <li>Typography and text effects</li>
+                            <li>Creating composite images</li>
+                            <li>Preparing images for web and print</li>
+                        </ul>
+                        
+                        <div class="certificate">
+                            <h4>Digital Arts Proficiency Certificate</h4>
+                            <p>Graduates receive a Digital Arts Proficiency Certificate recognizing their competence in photo editing and digital image manipulation.</p>
+                        </div>
+                        
+                        <a href="index.html#registration" class="btn btn-primary">Enroll in Photoshop Program</a>
+                    </div>
+                    <div class="skill-image">
+                        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Photo Editing">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-content" id="baking-content">
+                <div class="skill-details">
+                    <div class="skill-info">
+                        <h3>Basic Cake Baking & Decorating Program</h3>
+                        <p>This hands-on baking program teaches fundamental cake preparation and decoration techniques, providing skills for potential small business opportunities or employment in bakeries.</p>
+                        
+                        <h4>Course Curriculum:</h4>
+                        <ul>
+                            <li>Kitchen safety and sanitation practices</li>
+                            <li>Understanding baking ingredients and measurements</li>
+                            <li>Basic cake recipes (vanilla, chocolate, sponge)</li>
+                            <li>Buttercream and frosting preparation</li>
+                            <li>Cake leveling, filling, and crumb coating</li>
+                            <li>Basic piping techniques and borders</li>
+                            <li>Fondant handling and covering</li>
+                            <li>Simple cake decoration designs</li>
+                            <li>Packaging and presentation for sale</li>
+                            <li>Costing and pricing for small business</li>
+                        </ul>
+                        
+                        <div class="certificate">
+                            <h4>Baking Arts Certificate</h4>
+                            <p>Participants who complete the program receive a Baking Arts Certificate acknowledging their proficiency in basic cake baking and decoration.</p>
+                        </div>
+                        
+                        <a href="index.html#registration" class="btn btn-primary">Enroll in Baking Program</a>
+                    </div>
+                    <div class="skill-image">
+                        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cake Baking">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Severe Cases Section -->
+    <section id="severe" class="severe-cases">
+        <div class="container">
+            <div class="section-title">
+                <h2>Programs for Severe Cases</h2>
+                <p>Extended programs designed for participants struggling with substance abuse or severe behavioral issues</p>
+            </div>
+            
+            <div class="case-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-period">20 Days<br>Minimum</div>
+                    <div class="timeline-content">
+                        <h3>Substance Abuse Intervention Program</h3>
+                        <p>For participants with identified drug or alcohol abuse issues, we require a minimum 20-day program to establish foundation for recovery.</p>
+                        <ul>
+                            <li>Detoxification supervision (if needed)</li>
+                            <li>Individual and group counseling sessions</li>
+                            <li>Substance abuse education</li>
+                            <li>Relapse prevention planning</li>
+                            <li>Introduction to support systems</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-period">2-6 Months<br>Recommended</div>
+                    <div class="timeline-content">
+                        <h3>Comprehensive Rehabilitation Program</h3>
+                        <p>For sustained recovery and behavioral change, we recommend programs of 2 to 6 months duration.</p>
+                        <ul>
+                            <li>Extended therapeutic interventions</li>
+                            <li>Multiple skills development certifications</li>
+                            <li>Staged reintegration planning</li>
+                            <li>Family therapy sessions</li>
+                            <li>Aftercare program development</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-period">6-12 Months<br>Severe Cases</div>
+                    <div class="timeline-content">
+                        <h3>Extended Transformation Program</h3>
+                        <p>For the most severe cases involving long-term substance abuse or deeply entrenched behavioral issues.</p>
+                        <ul>
+                            <li>Intensive psychological support</li>
+                            <li>Multiple skills mastery certifications</li>
+                            <li>Work readiness preparation</li>
+                            <li>Community service projects</li>
+                            <li>Gradual transition back to society</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p><strong>Note:</strong> Our program is designed to provide the time needed for genuine transformation and rehabilitation. Longer durations typically yield more sustainable results.</p>
+                <a href="index.html#contact" class="btn btn-primary">Consult About Severe Cases</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section id="staff" class="staff">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Professional Team</h2>
+                <p>Qualified professionals dedicated to the transformation of our participants</p>
+            </div>
+            
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Certified Facilitators</h3>
+                        <div class="title">First Aid Certified</div>
+                        <p>Our camp facilitators are trained in first aid and crisis intervention, ensuring participant safety at all times.</p>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Camp Leaders</h3>
+                        <div class="title">Outdoor & Adventure Practice Certified</div>
+                        <p>Specialized in outdoor activities and adventure therapy to promote personal growth through challenging experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Psychologists</h3>
+                        <div class="title">Clinical Professionals</div>
+                        <p>Licensed psychologists provide individual and group therapy sessions addressing underlying psychological issues.</p>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Social Workers</h3>
+                        <div class="title">Registered Practitioners</div>
+                        <p>Our social workers assist with family dynamics, reintegration planning, and community resource connections.</p>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Motivational Speakers</h3>
+                        <div class="title">Inspirational Leaders</div>
+                        <p>Experts in motivation and personal development who inspire participants to reach their full potential.</p>
+                    </div>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="staff-info">
+                        <h3>Skills Instructors</h3>
+                        <div class="title">Industry Professionals</div>
+                        <p>Experienced practitioners who provide hands-on training in welding, photo editing, and baking skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Discipline Bootcamp SA</h3>
+                    <p>Transforming troubled youth through discipline, skills development, and positive reinforcement.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="index.html#location">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Dumezulu, Port Shepstone, KZN</li>
+                        <li><i class="fas fa-phone"></i> 077 456 0497 (Calls)</li>
+                        <li><i class="fab fa-whatsapp"></i> 061 921 1850 (WhatsApp)</li>
+                        <li><i class="fas fa-envelope"></i> disciplinebootcampsa@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Discipline Bootcamp SA. All rights reserved. | Founder & Commander General: King Madlokovu</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Skills tab functionality
+        const skillTabs = document.querySelectorAll('.skill-tab');
+        const skillContents = document.querySelectorAll('.skill-content');
+        
+        skillTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                skillTabs.forEach(t => t.classList.remove('active'));
+                skillContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
