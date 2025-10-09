@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discipline Bootcamp SA | Youth Development & Behavioral Transformation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6d9b43',
+                        'primary-dark': '#5a7f36',
+                        'primary-light': '#8ab563',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #6d9b43 0%, #5a7f36 100%);
+        }
+        
+        .section-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .price-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+        
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, -15px); }
+            100% { transform: translate(0, -0px); }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        .form-success {
+            display: none;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .logo-placeholder {
+            width: 180px;
+            height: 50px;
+            background-color: #6d9b43;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/27619211850?text=Hi%20Discipline%20Bootcamp%20SA,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20programs" 
+       class="whatsapp-float" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="sticky-nav bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <!-- Logo Image - Replace src with your actual logo.png -->
+                    <img src="logo.png" alt="Discipline Bootcamp SA Logo" class="h-10 md:h-12 mr-3">
+                    <!-- Fallback placeholder in case logo doesn't load -->
+                    <div class="logo-placeholder text-sm md:text-base hidden">
+                        DISCIPLINE BOOTCAMP SA
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary font-medium">About</a>
+                    <a href="#programs" class="text-gray-600 hover:text-primary font-medium">Programs</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary font-medium">Pricing</a>
+                    <a href="#location" class="text-gray-600 hover:text-primary font-medium">Location</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary font-medium">Contact</a>
+                </div>
+                
+                <a href="#contact" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg font-medium transition duration-300">
+                    Enroll Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Transform Young Lives Through <span class="text-yellow-300">Discipline</span> & Purpose
+                    </h1>
+                    <p class="text-xl mb-8 text-green-100">
+                        Helping youth ages 7-38 overcome behavioral challenges and develop life skills in our structured, professional bootcamp environment.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#programs" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-center transition duration-300">
+                            Explore Programs
+                        </a>
+                        <a href="#contact" class="bg-transparent hover:bg-primary-dark border-2 border-white text-white font-bold py-3 px-8 rounded-lg text-center transition duration-300">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center fade-in">
+                    <div class="relative">
+                        <div class="bg-primary-dark rounded-2xl p-2 shadow-2xl floating">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Youth Development" class="rounded-xl w-full max-w-md">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white text-gray-800 p-4 rounded-xl shadow-lg">
+                            <div class="flex items-center">
+                                <div class="bg-primary text-white p-2 rounded-full mr-3">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">365 Days Operation</p>
+                                    <p class="text-sm">Open year-round</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 section-gradient">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Mission & Approach</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We're dedicated to helping young people overcome behavioral challenges through structured programs and professional guidance.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Addressing Key Challenges</h3>
+                    <p class="text-gray-600 mb-6">
+                        At Discipline Bootcamp SA, we specialize in helping youth ages 7-38 overcome a range of behavioral and attitude challenges including:
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-red-100 text-red-600 p-2 rounded-full mr-3">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Substance Abuse</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 text-red-600 p-2 rounded-full mr-3">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Laziness & Lack of Motivation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 text-red-600 p-2 rounded-full mr-3">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Negative Peer Pressure</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 text-red-600 p-2 rounded-full mr-3">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Bad Attitude & Disrespect</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 text-red-600 p-2 rounded-full mr-3">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Low Self-Confidence</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-red-100 text-red-600 p-2 rounded-full mr-3">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Lack of Discipline</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Building Positive Outcomes</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-green-100 text-primary p-2 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Discipline & Self-Control</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 text-primary p-2 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Positive Behavior Patterns</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 text-primary p-2 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Leadership Skills</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-green-100 text-primary p-2 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Life & Vocational Skills</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl shadow-xl p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Our Professional Team</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary p-3 rounded-full mr-4">
+                                    <i class="fas fa-user-graduate text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Qualified Facilitators</h4>
+                                    <p class="text-gray-600">Experienced professionals guiding participants through transformative processes.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary p-3 rounded-full mr-4">
+                                    <i class="fas fa-brain text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Psychologists</h4>
+                                    <p class="text-gray-600">Mental health professionals providing psychological support and assessment.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary p-3 rounded-full mr-4">
+                                    <i class="fas fa-hands-helping text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Social Workers</h4>
+                                    <p class="text-gray-600">Trained social workers addressing family and social dynamics.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary p-3 rounded-full mr-4">
+                                    <i class="fas fa-bullhorn text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Motivational Speakers</h4>
+                                    <p class="text-gray-600">Inspiring individuals sharing stories of transformation and success.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary p-3 rounded-full mr-4">
+                                    <i class="fas fa-first-aid text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">First-Aid Certified Staff</h4>
+                                    <p class="text-gray-600">All leaders are trained in outdoor safety and first-aid procedures.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Programs & Skills Training</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Beyond behavioral transformation, we equip participants with practical skills for future success.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-green-50 rounded-2xl p-8 text-center fade-in">
+                    <div class="feature-icon bg-green-100 text-primary mx-auto">
+                        <i class="fas fa-fire text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Welding</h3>
+                    <p class="text-gray-600">
+                        Learn practical welding skills that can lead to vocational opportunities and career development.
+                    </p>
+                </div>
+                
+                <div class="bg-green-50 rounded-2xl p-8 text-center fade-in">
+                    <div class="feature-icon bg-green-100 text-primary mx-auto">
+                        <i class="fas fa-camera text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Photo Editing</h3>
+                    <p class="text-gray-600">
+                        Master Photoshop and digital image editing for creative expression and potential career paths.
+                    </p>
+                </div>
+                
+                <div class="bg-green-50 rounded-2xl p-8 text-center fade-in">
+                    <div class="feature-icon bg-green-100 text-primary mx-auto">
+                        <i class="fas fa-birthday-cake text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Cake Baking</h3>
+                    <p class="text-gray-600">
+                        Develop culinary skills in cake baking and decoration, fostering creativity and potential entrepreneurship.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 text-white rounded-2xl p-8 md:p-12 fade-in">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Specialized Support for Substance Abuse</h3>
+                        <p class="text-lg mb-6">
+                            For participants dealing with drug or alcohol challenges, we recommend an extended program of 20 days to 6-12 months for comprehensive recovery and transformation.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="bg-primary text-white p-2 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="font-medium">Structured recovery programs</span>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 flex justify-center">
+                        <div class="bg-white text-gray-800 rounded-xl p-6 text-center shadow-lg">
+                            <p class="text-sm uppercase tracking-wider mb-2">Recommended Duration</p>
+                            <p class="text-3xl font-bold">20 Days to<br>12 Months</p>
+                            <p class="text-sm mt-2">Based on individual assessment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 section-gradient">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Bootcamp Packages</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Flexible program durations to meet individual needs and transformation goals.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="price-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="bg-primary text-white py-6 text-center">
+                        <h3 class="text-2xl font-bold">5 Days</h3>
+                        <div class="mt-2">
+                            <span class="text-4xl font-bold">R2,000</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Intensive short-term intervention</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Behavioral assessment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Basic discipline foundation</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Select Plan
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="price-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="bg-primary-dark text-white py-6 text-center relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-yellow-500 text-gray-900 text-sm font-bold px-4 py-1 rounded-full">POPULAR</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">10 Days</h3>
+                        <div class="mt-2">
+                            <span class="text-4xl font-bold">R3,500</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Comprehensive behavioral program</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Skill development introduction</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Extended transformation period</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-primary-dark hover:bg-primary text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Select Plan
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="price-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="bg-primary text-white py-6 text-center">
+                        <h3 class="text-2xl font-bold">1 Month</h3>
+                        <div class="mt-2">
+                            <span class="text-4xl font-bold">R8,000</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Deep behavioral transformation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Full skills training program</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Personal development plan</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Select Plan
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="price-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="bg-primary-dark text-white py-6 text-center">
+                        <h3 class="text-2xl font-bold">2 Months</h3>
+                        <div class="mt-2">
+                            <span class="text-4xl font-bold">R16,000</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Extended transformation program</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Advanced skills mastery</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Leadership development</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-primary-dark hover:bg-primary text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Select Plan
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="price-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="bg-primary text-white py-6 text-center">
+                        <h3 class="text-2xl font-bold">Extended Programs</h3>
+                        <div class="mt-2">
+                            <span class="text-xl">Up to 12 Months</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Complete life transformation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Vocational certification</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                                <span>Reintegration preparation</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-primary hover:bg-primary-dark text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Contact for Pricing
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto fade-in">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Registration Process & Requirements</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">Payment Process</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary rounded-full p-2 mr-3 mt-1">
+                                    <i class="fas fa-1"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">50% Non-refundable Deposit</p>
+                                    <p class="text-gray-600 text-sm">Required to secure placement</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary rounded-full p-2 mr-3 mt-1">
+                                    <i class="fas fa-2"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Full Payment Due</p>
+                                    <p class="text-gray-600 text-sm">15 days before camp starts</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary rounded-full p-2 mr-3 mt-1">
+                                    <i class="fas fa-3"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Late Application Fee</p>
+                                    <p class="text-gray-600 text-sm">R250 for applications after deadline</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">What to Bring</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary rounded-full p-2 mr-3 mt-1">
+                                    <i class="fas fa-tshirt"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Basic Clothing & Bedding</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary rounded-full p-2 mr-3 mt-1">
+                                    <i class="fas fa-toilet-paper"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Toiletries</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-primary rounded-full p-2 mr-3 mt-1">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Bible or Quran</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 text-yellow-600 rounded-full p-2 mr-3 mt-1">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Uniform Fee: R250</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-red-100 text-red-600 rounded-full p-2 mr-3 mt-1">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">No Electronic Devices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Location</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Situated in the beautiful KwaZulu-Natal region, our camp offers a serene environment for transformation.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">KZN Headquarters</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-primary p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Dumezulu, Near Port Shepstone</h4>
+                                <p class="text-gray-600">25 minutes from Margate, 5 minutes from KwaXolo Caves Adventures</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-primary p-3 rounded-full mr-4">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">365 Days Operation</h4>
+                                <p class="text-gray-600">We operate year-round and accept new registrations at any time</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-primary p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Coordinates</h4>
+                                <p class="text-gray-600">30.89365° S, 30.20201° E</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 rounded-xl p-6 mt-8">
+                            <h4 class="font-bold text-lg text-gray-800 mb-4">Banking Details</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Bank:</span>
+                                    <span class="font-medium">Capitec</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Account Name:</span>
+                                    <span class="font-medium">Mr L. Mngadi</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Account No:</span>
+                                    <span class="font-medium">2015273219</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Branch Code:</span>
+                                    <span class="font-medium">470010</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12087.869028773135!2d30.20201!3d-30.89365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDUzJzM3LjEiUyAzMMKwMTInMDcuMiJF!5e0!3m2!1sen!2sza!4v1620000000000!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 section-gradient">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to transform a young life? Get in touch with our team today.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Us a Message via WhatsApp</h3>
+                        
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Your Name *</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your name" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email">
+                            </div>
+                            
+                            <div>
+                                <label for="participantAge" class="block text-gray-700 font-medium mb-2">Participant's Age</label>
+                                <input type="number" id="participantAge" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter age" min="7" max="38">
+                            </div>
+                            
+                            <div>
+                                <label for="programInterest" class="block text-gray-700 font-medium mb-2">Program of Interest</label>
+                                <select id="programInterest" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">Select a program</option>
+                                    <option value="5 Days">5 Days - R2,000</option>
+                                    <option value="7 Days">7 Days - R2,500</option>
+                                    <option value="10 Days">10 Days - R3,500</option>
+                                    <option value="1 Month">1 Month - R8,000</option>
+                                    <option value="2 Months">2 Months - R16,000</option>
+                                    <option value="Extended">Extended Program (3-12 months)</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message *</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tell us about your situation and how we can help" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
+                                <i class="fab fa-whatsapp mr-2 text-xl"></i> Send via WhatsApp
+                            </button>
+                        </form>
+                        
+                        <div id="formSuccess" class="form-success mt-4">
+                            <i class="fas fa-check-circle mr-2"></i> Your message has been prepared. You will be redirected to WhatsApp to send it.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-gray-800 text-white rounded-2xl p-8 h-full">
+                        <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start">
+                                <div class="bg-primary p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Call Us</h4>
+                                    <p class="text-green-200">077 456 0497</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-600 p-3 rounded-full mr-4">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">WhatsApp</h4>
+                                    <p class="text-green-200">061 921 1850</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Email Us</h4>
+                                    <p class="text-green-200">disciplinebootcampsa@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-700 rounded-xl p-6">
+                            <h4 class="font-bold text-lg mb-4">Office Hours</h4>
+                            <p class="mb-2">We're available to answer your questions:</p>
+                            <p class="font-medium">Monday - Sunday: 8:00 AM - 6:00 PM</p>
+                            <p class="text-sm text-gray-300 mt-2">* Emergency calls accepted after hours</p>
+                        </div>
+                        
+                        <div class="mt-8 bg-primary-dark rounded-xl p-6">
+                            <h4 class="font-bold text-lg mb-4">Quick Connect</h4>
+                            <p class="mb-4">Click below to start a conversation on WhatsApp immediately:</p>
+                            <a href="https://wa.me/27619211850?text=Hi%20Discipline%20Bootcamp%20SA,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20programs" 
+                               class="block w-full bg-green-600 hover:bg-green-700 text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300" 
+                               target="_blank">
+                                <i class="fab fa-whatsapp mr-2"></i> Start WhatsApp Chat
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <!-- Logo in footer -->
+                        <img src="logo.png" alt="Discipline Bootcamp SA Logo" class="h-10 mr-3">
+                        <span class="text-xl font-bold">Discipline Bootcamp SA</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Transforming young lives through discipline and purpose</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Discipline Bootcamp SA. All rights reserved. | KZN Headquarters - Dumezulu, Port Shepstone</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Check on load
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // WhatsApp form submission
+            const contactForm = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const participantAge = document.getElementById('participantAge').value;
+                const programInterest = document.getElementById('programInterest').value;
+                const message = document.getElementById('message').value;
+                
+                // Construct WhatsApp message
+                let whatsappMessage = `Hello Discipline Bootcamp SA,%0A%0A`;
+                whatsappMessage += `I would like to get more information about your programs.%0A%0A`;
+                whatsappMessage += `*Name:* ${name}%0A`;
+                whatsappMessage += `*Phone:* ${phone}%0A`;
+                
+                if (email) {
+                    whatsappMessage += `*Email:* ${email}%0A`;
+                }
+                
+                if (participantAge) {
+                    whatsappMessage += `*Participant's Age:* ${participantAge}%0A`;
+                }
+                
+                if (programInterest) {
+                    whatsappMessage += `*Program Interest:* ${programInterest}%0A`;
+                }
+                
+                whatsappMessage += `*Message:* ${message}%0A%0A`;
+                whatsappMessage += `Please contact me with more information. Thank you!`;
+                
+                // Encode message for URL
+                const encodedMessage = encodeURIComponent(whatsappMessage).replace(/'/g, "%27").replace(/"/g, "%22");
+                
+                // Show success message
+                formSuccess.style.display = 'block';
+                
+                // Redirect to WhatsApp after a short delay
+                setTimeout(function() {
+                    window.open(`https://wa.me/27619211850?text=${encodedMessage}`, '_blank');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    formSuccess.style.display = 'none';
+                }, 1500);
+            });
+            
+            // Check if logo loaded properly, if not show placeholder
+            const logo = document.querySelector('nav img');
+            logo.addEventListener('error', function() {
+                this.style.display = 'none';
+                document.querySelector('.logo-placeholder').classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
